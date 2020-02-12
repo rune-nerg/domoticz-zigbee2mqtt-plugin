@@ -47,6 +47,7 @@ git pull
 ### Bitron
 - Bitron Wireless motion detector
 - Bitron Wireless smart plug
+- Bitron Wireless wall thermostat with relay
 
 ### Bosch
 - Bosch Motion sensor
@@ -406,6 +407,9 @@ git pull
 
 ### Zemismart
 - Zemismart ZM-CSW002-D 2 gang switch
+- Zemismart ZM-L03E-Z 3 gang with neutral wire switch
+- Zemismart RGB LED downlight
+- Zemismart Curtain/roller blind switch
 
 ### Other
 - Custom devices (DiY) DNCKAT single key wired wall light switch
