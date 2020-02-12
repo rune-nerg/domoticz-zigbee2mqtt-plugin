@@ -5,7 +5,9 @@ from devices.switch.blind_percentages_switch import BlindSwitch
 class TradfriRollerBlind(Adapter):
     def __init__(self, devices):
         super().__init__(devices)
-        self.devices.append(BlindSwitch(devices, 'dimmer', 'position'))
+        self.blindswitch = BlindSwitch(devices, 'dimmer', 'position')
+        self.blindswitch.add_level('Stop', 'stop')
+        self.devices.append(self.blindswitch)
 
     def handleCommand(self, alias, device, device_data, command, level, color):
         if (command.upper() == "SET LEVEL"):
@@ -22,11 +24,18 @@ class TradfriRollerBlind(Adapter):
                 "state": "close"
             })
             }
-        else:
-            command="open"
+        elif (command.upper() == "OFF"):
             return {
             'topic': device_data['friendly_name'] + '/set',
             'payload': json.dumps({
                 "state": "open"
+            })
+            }
+        else:
+            command="stop"
+            return {
+            'topic': device_data['friendly_name'] + '/set',
+            'payload': json.dumps({
+                "state": "stop"
             })
             }
