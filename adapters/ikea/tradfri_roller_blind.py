@@ -5,9 +5,7 @@ from devices.switch.blind_percentages_switch import BlindSwitch
 class TradfriRollerBlind(Adapter):
     def __init__(self, devices):
         super().__init__(devices)
-        self.blindswitch = BlindSwitch(devices, 'dimmer', 'position')
-        self.blindswitch.add_level('Stop', 'stop')
-        self.devices.append(self.blindswitch)
+        self.devices.append(BlindSwitch(devices, 'dimmer', 'position'))
 
     def handleCommand(self, alias, device, device_data, command, level, color):
         if (command.upper() == "SET LEVEL"):
