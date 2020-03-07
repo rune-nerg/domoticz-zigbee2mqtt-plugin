@@ -23,6 +23,7 @@ from adapters.innr import innr_adapters
 from adapters.konke import konke_adapters
 from adapters.livolo.TI0001 import TI0001
 from adapters.lumi import lumi_adapters
+from adapters.namron import namron_adapters
 from adapters.netvox.Z809A import NetvoxZ809A
 from adapters.osram import osram_adapters
 from adapters.oujiabao.CR701_YZ import CR701_YZ
@@ -176,6 +177,7 @@ adapter_by_model = dict({
     **innr_adapters,
     **konke_adapters,
     **lumi_adapters,
+    **namron_adapters,
     **osram_adapters,
     **philips_adapters,
     **samsung_adapters,
