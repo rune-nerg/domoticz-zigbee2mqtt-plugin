@@ -30,6 +30,17 @@ git pull
 ```
 2. Restart domoticz
 
+## Zigbee groups support
+
+Plugin supports [zigbee groups](https://www.zigbee2mqtt.io/information/groups.html). It is impossible to automatically identify what device should represent the group (OnOff switch, dimmer, etc.), so plugin relies on suffixes in zigbee group name. Currently following suffixes are supported:
+
+| Suffix  | Device Type                           | Example        |
+|---------|---------------------------------------|----------------|
+| _dimmer | Dimmer Switch                         | mygroup_dimmer |
+| _ct     | Dimmer Switch with Color Temperature  | mygroup_ct     |
+
+if no suffix will be found then On/Off switch will be created by default
+
 ## Supported devices
 
 ### AduroSmart
@@ -48,6 +59,9 @@ git pull
 - Bitron Wireless motion detector
 - Bitron Wireless smart plug
 - Bitron Wireless wall thermostat with relay
+
+### Blitzwolf
+- Blitzwolf BW-IS4 Temperature & humidity sensor with display
 
 ### Bosch
 - Bosch Motion sensor
@@ -105,6 +119,7 @@ git pull
 - Gledopto Zigbee LED controller RGB + CCT / RGBW / WWCW / Dimmer 
 - Gledopto Zigbee LED controller RGB + CCT or RGBW
 - Gledopto Zigbee LED controller RGB + CCT plus model
+- Gledopto Zigbee LED controller RGBW plus model    
 - Gledopto Zigbee LED controller WW/CW Dimmer
 - Gledopto Zigbee LED controller dimmer
 - Gledopto Zigbee ON/OFF Wall Switch
@@ -144,6 +159,7 @@ git pull
 - IKEA TRADFRI control outlet
 - IKEA TRADFRI ON/OFF switch
 - IKEA TRADFRI motion sensor
+- IKEA TRADFRI signal repeater
 - IKEA FLOALT LED light panel, dimmable, white spectrum (30x30 cm)
 - IKEA FLOALT LED light panel, dimmable, white spectrum (60x60 cm)
 - IKEA FLOALT LED light panel, dimmable, white spectrum (30x90 cm)
@@ -208,6 +224,7 @@ git pull
 ### Müller Licht
 - Müller Licht Tint LED bulb GU10/E14/E27 350/470/806 lumen, dimmable, color, opal white
 - Müller Licht Tint LED bulb GU10/E14/E27 350/470/806 lumen, dimmable, opal white
+- Müller Licht Tint smart switch
 
 ### Nanoleaf
 - Nanoleaf Ivy smart bulb
@@ -329,6 +346,7 @@ git pull
 - SmartThings Multi sensor (2015, 2016, 2018 models)
 - SmartThings Multipurpose sensor (2015, 2016, 2018 models)
 - SmartThings Outlet
+- SmartThings Outlet
 
 ### Stelpro
 - Stelpro Built-in electronic thermostat
@@ -362,6 +380,7 @@ git pull
 - TUYATEC Temperature & humidity sensor
 - TUYATEC Smart light switch - 1 gang without neutral wire
 - TUYATEC Zigbee smart dimmer
+- TUYATEC Temperature & humidity sensor with display
 
 ### Xiaomi
 
@@ -388,9 +407,14 @@ git pull
 - Xiaomi MiJia Honeywell smoke detector
 - Xiaomi MiJia door & window contact sensor
 - Xiaomi MiJia gas leak detector
+- Xiaomi MiJia light intensity sensor
 - Xiaomi MiJia human body movement sensor
 - Xiaomi MiJia temperature & humidity sensor
 - Xiaomi MiJia wireless switch
+
+### Weiser
+- Weiser SmartCode 10
+- Weiser SmartCode 10 Touch
 
 ### eWeLink
 - eWeLink Zigbee smart plug

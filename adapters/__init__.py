@@ -5,6 +5,7 @@ from adapters.dimmable_ct_bulb_adapter import DimmableCtBulbAdapter
 from adapters.on_off_switch_adapter import OnOffSwitchAdapter
 from adapters.rgb_adapter import RGBAdapter
 from adapters.rgbw_adapter import RGBWAdapter
+from adapters.weiser_lock import WeiserLock
 from adapters.bitron import bitron_adapters
 from adapters.cr import cr_adapters
 from adapters.generic.motion_sensor import MotionSensorAdapter
@@ -12,6 +13,7 @@ from adapters.generic.motion_temp_sensor import MotionAndTemperatureSensorAdapte
 from adapters.generic.on_off_kwh import OnOffKwhAdapter
 from adapters.generic.smoke_sensor import SmokeSensorAdapter
 from adapters.generic.temperature_sensor import TemperatureSensorAdapter
+from adapters.generic.temp_hum_sensor import TemperatureHumiditySensorAdapter
 from adapters.generic.water_leak_sensor import WaterLeakSensorAdapter
 from adapters.gira.light_link import GiraLightLink
 from adapters.gledopto import gledopto_adapters
@@ -35,6 +37,9 @@ from adapters.diy.zigup import ZigupAdapter
 from adapters.zemismart import zemismart_adapters
 
 adapter_by_model = dict({
+    # Alecto Smart Home
+    'RH3001': ContactAdapter,                   # Alecto Smart Home - Smart sensor door / window
+    'RH3052': TemperatureHumiditySensorAdapter,   # Alecto Smart Home branded Smart sensor temp and humidity / TUYATEC - TT001ZAV20 temp and humidity sensor
     # AduroSmart
     '81809': RGBWAdapter,               # AduroSmart ERIA colors and white shades smart light bulb A19
     # Airam
@@ -101,6 +106,7 @@ adapter_by_model = dict({
     # Müller Licht
     '404000/404005/404012': RGBWAdapter,            # Müller Licht Tint LED bulb GU10/E14/E27 350/470/806 lumen, dimmable, color, opal white
     '404006/404008/404004': DimmableCtBulbAdapter,  # Müller Licht Tint LED bulb GU10/E14/E27 350/470/806 lumen, dimmable, opal white
+    '404021': OnOffSwitchAdapter,                   # Müller Licht Tint smart switch
     # Nanoleaf
     'NL08-0800': DimmableBulbAdapter,   # Nanoleaf Ivy smart bulb
     # Netvox
@@ -149,6 +155,9 @@ adapter_by_model = dict({
     # Swann One
     'SWO-KEF1PA': KEF1PA,				# Swann Key fob remote (panic, home, away, sleep)
     'SWO-WDS1PA': ContactAdapter,       # Swann Window/door sensor
+    # Weiser
+    '9GED18000-009': WeiserLock,        # Weiser SmartCode 10
+    '9GED21500-005': WeiserLock,        # Weiser SmartCode 10 Touch
     # eWeLink
     'SA-003-Zigbee': OnOffSwitchAdapter,# eWeLink Zigbee smart plug
     # iCasa
