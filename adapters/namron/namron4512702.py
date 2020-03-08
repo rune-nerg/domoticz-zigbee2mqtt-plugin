@@ -5,15 +5,13 @@ class Namron4512702(AdapterWithBattery):
     def __init__(self, devices):
         super().__init__(devices)
 
-        selv.dim1 = DimmerSwitch(devices, 'dimmer', 'value')
-        self.devices.append(self.dim1)
+        self.dimmer = DimmerSwitch(devices, 'dimmer', 'value')
+        self.devices.append(self.dimmer)
         
     def convert_message(self, message):
         message = super().convert_message(message)
-        if 'key' in message.raw:
-            valuekey = 'value' + str(message.raw['key'])
-            if 'click' in message.raw and message.raw['click'].lower() == 'off':
-                message.raw[valuekey] = 0
-            elif 'brightness' in message.raw:
-                message.raw[valuekey] = message.raw['brightness']
+        if 'click' in message.raw and message.raw['click'].lower() == 'off':
+            message.raw['value'] = 0
+        elif 'brightness' in message.raw:
+            message.raw['value'] = message.raw['brightness']
         return message
