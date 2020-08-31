@@ -1,32 +1,33 @@
-import Domoticz
 import json
-from adapters.adapter_with_battery import AdapterWithBattery
+from adapters.contact_adapter import ContactAdapter
 from devices.sensor.temperature import TemperatureSensor
 from devices.switch.selector_switch import SelectorSwitch
 from devices.setpoint import SetPoint
 
 
-class EurotronicThermostatAdapter(AdapterWithBattery):
+class TH1124ZB(ContactAdapter):
 
     def __init__(self, devices):
         super().__init__(devices)
 
-        mode_switch = SelectorSwitch(devices, 'mode', 'system_mode', ' (Mode)')
-        mode_switch.add_level('Off', 'off')
-        mode_switch.add_level('Auto', 'auto')
-        mode_switch.add_level('Heat', 'heat')
-        mode_switch.set_selector_style(SelectorSwitch.SELECTOR_TYPE_BUTTONS)
-        mode_switch.set_icon(15)
+        temperature_sensor = TemperatureSensor(devices, 'temp', 'local_temperature',' (Temperature)')
+        self.devices.append(temperature_sensor)
 
-        self.devices.append(TemperatureSensor(devices, 'temp', 'local_temperature',' (Temperature)'))
-        self.devices.append(SetPoint(devices, 'spoint', 'current_heating_setpoint',' (Setpoint)'))
+        setpoint = SetPoint(devices, 'sp1', 'occupied_heating_setpoint',' (Occupied Setpoint)')
+        self.devices.append(setpoint)
+
+        mode_switch = SelectorSwitch(devices, 'mode', 'system_mode', ' (Mode)')
+        mode_switch.add_level('Off', 'idle')
+        mode_switch.add_level('Heat', 'heat')
+        mode_switch.set_selector_style(SelectorSwitch.SELECTOR_TYPE_MENU)
+        mode_switch.set_icon(15)
         self.devices.append(mode_switch)
 
     def handleCommand(self, alias, device, device_data, command, level, color):
         topic = device_data['friendly_name'] + '/set'
 
-        if alias == 'spoint' and command == 'Set Level':
-            msg = json.dumps({ 'current_heating_setpoint': level })
+        if alias == 'sp1' and command == 'Set Level':
+            msg = json.dumps({ 'occupied_heating_setpoint': level })
 
             return {
                 'topic': topic,

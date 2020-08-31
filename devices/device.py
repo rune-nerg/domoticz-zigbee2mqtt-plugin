@@ -15,7 +15,7 @@ class Device():
             raise ValueError('Alias "' + self.alias + '" is too long to generate valid DeviceID')
 
     def get_first_available_unit(self):
-        for i in range(1, 255):
+        for i in range(1, 254):
             if i not in self.devices:
                 return i
 
@@ -73,6 +73,13 @@ class Device():
 
         if (device == None):
             self._create_device(device_data)
+
+    # Removes device from Domoticz
+    def remove(self, ieee_addr):
+        device = self.get_device(ieee_addr, self.alias)
+
+        if (device != None):
+            device.Delete()
 
     def get_message_value(self, message):
         if (self.value_key in message.raw):
