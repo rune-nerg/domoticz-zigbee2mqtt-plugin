@@ -27,7 +27,7 @@ class Namron4512703(AdapterWithBattery):
                     device = self.get_device_by_value_key(valuekey)
                     if len(actions) > 1:
                         if actions[1] == 'move':
-                            rate = message.raw[action_rate]
+                            rate = message.raw['action_rate']
                             value = int(device.sValue)*255/100 + (rate if actions[2] == 'up' else -rate)
                             value = str(value * 100 / 255)
                             message.raw[valuekey] = value
@@ -53,7 +53,6 @@ class Namron4512703(AdapterWithBattery):
         
         self.update_battery_status(device_data, converted_message)
         self.update_link_quality(device_data, converted_message)
-
 
     def get_device_by_value_key(self, value_key):
         for device in self.devices:
