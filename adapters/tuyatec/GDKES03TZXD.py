@@ -3,12 +3,14 @@ import json
 from adapters.base_adapter import Adapter
 from devices.switch.on_off_switch import OnOffSwitch
 
-class ZMCSW002D(Adapter):
+
+class GDKES03TZXD(Adapter):
     def __init__(self, devices):
         super().__init__(devices)
 
-        self.devices.append(OnOffSwitch(devices, 'l1', 'state_l1'))
-        self.devices.append(OnOffSwitch(devices, 'l2', 'state_l2'))
+        self.devices.append(OnOffSwitch(devices, 'left', 'state_left'))
+        self.devices.append(OnOffSwitch(devices, 'center', 'state_center'))
+        self.devices.append(OnOffSwitch(devices, 'right', 'state_right'))
 
     def handleCommand(self, alias, device, device_data, command, level, color):
         return {

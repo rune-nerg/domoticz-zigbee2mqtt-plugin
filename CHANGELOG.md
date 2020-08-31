@@ -1,6 +1,98 @@
 # Changelog
 
 ## master
+- Add strength and angle sensor for Xiaomi DJT11LM
+- Add smoke density, self test and sensivity support for Xiaomi JTYJ-GD-01LM/BW
+- Ability to remove device from zigbee network using plugin UI
+- Double click support for QBKG03LM and QBKG12LM
+- Update available devices after succesfull zigbee device interview
+
+New devices:
+- iCasa Zigbee AC dimmer
+- iCasa Zigbee 3.0 Filament Lamp 60/64/95/125 mm
+- iCasa Zigbee 3.0 Keypad Pulse 4S
+- iCasa Zigbee 3.0 Keypad Pulse 8S
+- IKEA GUNNARP panel round
+- Schneider Electric Wiser radiator thermostat
+- SmartThings Smart siren
+- Meazon DinRail 1-phase meter
+- Siterwell Radiator valve with thermostat
+- Essentials Smart home heizkörperthermostat premium (white-label of Siterwell GS361A-H04)
+- Philips Hue white ambiance suspension Amaze
+- Philips Hue Fair
+- Philips Hue Attract
+- Philips Hue Aphelion downlight
+- Philips Hue Ensis
+- Philips Hue white single filament bulb A19 E26 with Bluetooth
+- Philips Hue white E12 with Bluetooth
+- Philips Hue white A19 bulb E26 with Bluetooth
+- Philips Hue Calla outdoor
+- Philips Hue Calla outdoor
+- Philips Hue Econic outdoor Pedestal
+- Philips Hue Impress outdoor Pedestal
+- Philips Hue white A19 bulb with Bluetooth
+- Philips Hue white A19 bulb E26 bluetooth
+- Philips Hue Flourish white and color ambiance pendant light
+- Philips Hue white ambiance bathroom mirror light Adore
+- Philips Hue white ambiance bathroom ceiling light Adore
+- Philips Hue white ambiance Muscari pendant light
+- Philips Hue Being Pendant
+- Philips Hue outdoor Impress wall lamp
+- Philips Hue outdoor Impress wall lamp
+- Philips Hue outdoor Impress lantern
+- Philips Hue Iris (Generation 2)
+- Philips Hue Signe floor light
+- Philips Hue Signe table light
+- Philips Hue white and color ambience Argenta spot (1 spot)
+- Philips Hue white and color ambience Argenta spot (2 spots)
+- Philips Hue white and color ambience Argenta spot (3 spots)
+- Philips Hue white and color ambience Argenta spot (4 spots)
+- Philips Hue Centura
+- Philips Hue smart plug - AU
+- Philips Hue Discover white and color ambiance flood light
+- Philips Hue white filament Edison ST19 LED
+- Philips Hue Beyond white and color ambiance suspension light
+- Gledopto Smart 6W E27 RGB / CW LED bulb
+- TuYa 10A UK or 16A EU smart plug
+- Swann Motion and temperature sensor
+- Vrey VR-X711U
+- SONOFF Zigbee smart switch
+- SONOFF Zigbee smart plug (US version)
+- SONOFF Temperature and humidity sensor
+- SONOFF Motion sensor
+- SONOFF Contact sensor
+- Xiaomi Aqara D1 single gang smart wall switch (no neutral wire)
+- Xiaomi Aqara D1 1 gang smart wall switch (with neutral wire)
+- Xiaomi Aqara D1 2 gang smart wall switch (with neutral wire)
+- eWeLink Contact sensor
+- eWeLink Temperature and humidity sensor
+- eWeLink Motion sensor
+- Xiaomi Aqara D1 double key wireless wall switch
+- Xiaomi Aqara D1 3 gang smart wall switch (no neutral wire)
+- Gledopto Zigbee LED controller RGBW (1 ID)
+- Immax 4-Touch single click buttons
+- LifeControl Air sensor
+- Feibit Smart carbon monoxide sensor
+- Feibit Door or window contact switch
+- Feibit Power plug
+- Feibit Combustible gas sensor
+- Feibit Smoke detector
+- Feibit Smart temperature & humidity Sensor
+- Feibit Water leakage sensor
+- Innr E27 filament bulb dimmable
+- Innr Outdoor flex light colour LED strip 2m, 550lm, RGBW
+- Innr Outdoor flex light colour LED strip 4m, 1000lm, RGBW
+- Innr Outdoor smart spot colour, 230lm/spot, RGBW
+- Innr E14 candle with white spectrum
+- SONOFF Push switch
+
+## 0.2.0
+- Support for "stop" command for blinds adapter
+- Support for "skip" action on Ikea Symfonisk
+- Support for `rgb` and `rgbw` zigbee groups
+- Decoupled mode support for Xiaomi single key wired switches (QBKG04LM, QBKG11LM)
+- Custom Domoticz page to manage zigbee network
+- Additional Domoticz device with battery percentage value for battery powered devices
 
 New devices:
 - Xiaomi MiJia light intensity sensor
@@ -11,6 +103,41 @@ New devices:
 - Gledopto Zigbee LED controller RGBW plus model
 - SmartThings Outlet UK
 - IKEA TRADFRI signal repeater
+- Alecto Smart Home - Smart sensor door / window
+- Alecto Smart Home branded Smart sensor temp and humidity
+- Xiaomi Aqara Opple 2-button switch
+- Lonhonso 2 gang switch
+- TuYa 2 gang switch
+- TuYa Temperature & humidity sensor with display
+- HEIMAN Smart switch - 1 gang with neutral wire
+- HEIMAN Water leakage sensor
+- HEIMAN Smart temperature & humidity Sensor
+- HEIMAN Smart in wall plug
+- HEIMAN Smart motion sensor
+- HEIMAN Water leakage sensor
+- HEIMAN Smart siren
+- HEIMAN Combustible gas sensor
+- Salus Smart plug
+- SmartThings Outlet with power meter
+- SmartThings Zigbee Outlet UK with power meter
+- SmartThings Zigbee smart plug with power meter
+- Bitron Compact magnetic contact sensor
+- Xiaomi Vima Smart Lock
+- OSRAM SMART+ classic E27 dimmable
+- OSRAM SMART+ outdoor lantern RGBW
+- OSRAM SMART+ classic E27 TW
+- OSRAM SMART+ LED PAR16 GU10
+- OSRAM SMART+ LED CLASSIC E27 RGBW
+- OSRAM Smart+ gardenpole 4W RGBW
+- OSRAM Smart+ mini gardenpole RGBW
+- OSRAM SMART+ Spot GU10 Multicolor
+- OSRAM OSRAM SubstiTUBE T8 Advanced UO Connected
+- OSRAM OSRAM LED panel TW 595 UGR22
+- Shenzhen Homa Smart LED driver
+- Shenzhen Homa Wireless dimmable controller
+- Shenzhen Homa ZigBee AC phase-cut dimmer
+- Sinope Zigbee line volt thermostat
+- Neo Temperature & humidity sensor and alarm
 
 ## 0.1.0
 - Update adapter for Nue / 3A Smart in-wall switch (HGZB-01A)

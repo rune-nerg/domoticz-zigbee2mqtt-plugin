@@ -8,7 +8,7 @@ class DevicesManager:
 
     def _register_device(self, domoticz_devices, device_data):
         model = device_data['model']
-        Domoticz.Log('Device ' + model + ' ' + device_data['ieee_addr'] + ' (' + device_data['friendly_name'] + ')')
+        Domoticz.Debug('Device ' + model + ' ' + device_data['ieee_addr'] + ' (' + device_data['friendly_name'] + ')')
 
         self.devices[device_data['ieee_addr']] = device_data
         
@@ -38,6 +38,8 @@ class DevicesManager:
                 self._register_device(domoticz_devices, device_data)
             else:
                 Domoticz.Log('Device ' + item['ieeeAddr'] + ' (' + friendly_name + ') doesn\'t have "model" attribute, skipped')
+                Domoticz.Log('This is not the plugin issue, this is issue with your zigbee network')
+                Domoticz.Log('Try to try again later or repair the device')
 
     def get_device_by_id(self, ieee_addr):
         return self.devices[ieee_addr] if ieee_addr in self.devices else None
@@ -78,3 +80,15 @@ class DevicesManager:
         if (model in adapter_by_model):
             adapter = adapter_by_model[model](domoticz_devices)
             return adapter.handleCommand(alias, device, device_data, command, level, color)
+
+    def remove(self, domoticz_devices, friendly_name):
+        device_data = self.get_device_by_name(friendly_name)
+
+        if (device_data == None):
+            return
+
+        model = device_data['model']
+
+        if (model in adapter_by_model):
+            adapter = adapter_by_model[model](domoticz_devices)
+            adapter.remove(device_data['ieee_addr'])
