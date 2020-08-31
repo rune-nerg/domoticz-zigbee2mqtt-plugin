@@ -13,7 +13,7 @@ class Namron4512702(AdapterWithBattery):
         if 'action' in message.raw:
             actions = message.raw['action'].Split('_')
             if len(actions) > 0:
-                if (actions[0] == 'on' or actions[0] == 'off')
+                if (actions[0] == 'on' or actions[0] == 'off'):
                     message.raw['value'] = actions[0]
                 elif actions[0] == 'brightness':
                     device = self.dimmer
