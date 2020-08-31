@@ -59,4 +59,3 @@ class Namron4512703(AdapterWithBattery):
             if device.value_key == value_key:
                 return device
         return None
-
