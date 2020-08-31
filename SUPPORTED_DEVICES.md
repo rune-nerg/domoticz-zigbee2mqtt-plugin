@@ -227,6 +227,10 @@ If your device is not listed in the list below but [zigbee2mqtt supports](https:
 - Müller Licht Tint LED bulb GU10/E14/E27 350/470/806 lumen, dimmable, opal white
 - Müller Licht Tint smart switch
 
+### Namron
+- Namron 4512702 - Namron ZigBee 1 channel switch K4
+- Namron 4512703 - Namron ZigBee 4 channel switch K8
+
 ### Nanoleaf
 - Nanoleaf Ivy smart bulb
 
