@@ -217,10 +217,14 @@ If your device is not listed in the list below but [zigbee2mqtt supports](https:
 - Livolo Switch TI0001
 
 ### Lonhonso
+- Lonsonho 1 gang switch
 - Lonhonso 2 gang switch
 
 ### Meazon
 - Meazon DinRail 1-phase meter
+
+### Moes
+- Moes ZigBee3.0 dual USB wireless socket plug
 
 ### Müller Licht
 - Müller Licht Tint LED bulb GU10/E14/E27 350/470/806 lumen, dimmable, color, opal white
@@ -323,8 +327,10 @@ If your device is not listed in the list below but [zigbee2mqtt supports](https:
 - Philips Hue white A19 bulb E26 bluetooth
 - Philips Hue white A19 bulb E26 with Bluetooth
 - Philips Hue white A19 bulb with Bluetooth
+- Philips Hue white A21 bulb B22 with Bluetooth (1600 Lumen)
 - Philips Hue white A60 bulb E27
 - Philips Hue white A60 bulb E27 bluetooth
+- Philips Hue white A67 bulb E26 with Bluetooth (1600 Lumen)
 - Philips Hue white E12 with Bluetooth
 - Philips Hue white E14
 - Philips Hue white GU10
@@ -456,11 +462,16 @@ If your device is not listed in the list below but [zigbee2mqtt supports](https:
 - TuYa Temperature & humidity sensor with display
 - TuYa 2 gang switch
 - TuYa 10A UK or 16A EU smart plug
+- TuYa Wireless switch with 1 button
+- TuYa Radiator valve with thermostat
+- TuYa Curtain motor
+- TuYa Smart light switch - 1 gang without neutral wire
+- TuYa Smart light switch - 2 gang without neutral wire
+- TuYa Smart light switch - 3 gang without neutral wire
 
 ### TUYATEC
 - TUYATEC PIR sensor
 - TUYATEC Temperature & humidity sensor
-- TUYATEC Smart light switch - 1 gang without neutral wire
 - TUYATEC Zigbee smart dimmer
 - TUYATEC Temperature & humidity sensor with display
 

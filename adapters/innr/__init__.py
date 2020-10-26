@@ -1,8 +1,8 @@
+from adapters.generic.plug import PlugAdapter
 from adapters.dimmable_bulb_adapter import DimmableBulbAdapter
 from adapters.dimmable_ct_bulb_adapter import DimmableCtBulbAdapter
 from adapters.on_off_switch_adapter import OnOffSwitchAdapter
 from adapters.rgbw_adapter import RGBWAdapter
-from adapters.innr.SP120 import InnrSP120Plug
 
 
 innr_adapters = {
@@ -39,10 +39,12 @@ innr_adapters = {
     'RS 128 T': DimmableCtBulbAdapter,  # Innr GU10 Spot 350 lm, dimmable, white spectrum
     'RS 225': DimmableBulbAdapter,      # Innr GU10 Spot
     'RS 228 T': DimmableCtBulbAdapter,  # Innr GU10 Spot 350 lm
+    'RS 229 T': DimmableCtBulbAdapter,  # Innr GU10 Spot 350 lm, dimmable, white spectrum
+    'RS 230 C': RGBWAdapter,            # Innr GU10 spot 350 lm, dimmable, RGBW
     'SL 110 M': DimmableBulbAdapter,    # Innr Spot Flex medium
     'SL 110 N': DimmableBulbAdapter,    # Innr Spot Flex narrow
     'SL 110 W': DimmableBulbAdapter,    # Innr Spot Flex wide
-    'SP 120': InnrSP120Plug,            # Innr Smart plug
+    'SP 120': PlugAdapter,              # Innr Smart plug
     'SP 220': OnOffSwitchAdapter,       # Innr Smart plug
     'SP 222': OnOffSwitchAdapter,       # Innr Smart plug
     'SP 224': OnOffSwitchAdapter,       # Innr Smart plug
