@@ -21,12 +21,12 @@ class Namron4512702(AdapterWithBattery):
                         if actions[1] == 'move':
                             rate = message.raw['action_rate']
                             value = int(device.sValue)*255/100 + (rate if actions[2] == 'up' else -rate)
-                            value = str(value * 100 / 255)
+                            value = value * 100 / 255
                             message.raw['value'] = value
                         elif actions[1] == 'step':
                             step = message.raw['action_step_size']
                             value = int(device.sValue)*255/100 + (step if actions[2] == 'up' else -step)
-                            value = str(value * 100 / 255)
+                            value = value * 100 / 255
                             message.raw['value'] = value
                         elif actions[1] == 'stop':
                             none
