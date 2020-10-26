@@ -6,6 +6,7 @@
 - Ability to remove device from zigbee network using plugin UI
 - Double click support for QBKG03LM and QBKG12LM
 - Update available devices after succesfull zigbee device interview
+- Update behavior of Xiaomi WXKG01LM to support zigbee2mqtt 1.14.3 and futher versions
 
 New devices:
 - iCasa Zigbee AC dimmer
@@ -85,6 +86,15 @@ New devices:
 - Innr Outdoor smart spot colour, 230lm/spot, RGBW
 - Innr E14 candle with white spectrum
 - SONOFF Push switch
+- Philips Hue white A67 bulb E26 with Bluetooth (1600 Lumen)
+- Philips Hue white A21 bulb B22 with Bluetooth (1600 Lumen)
+- TuYa Wireless switch with 1 button
+- TuYa Radiator valve with thermostat
+- Lonsonho 1 gang switch
+- TuYa Smart light switch - 1 gang without neutral wire
+- TuYa Curtain motor
+- Moes ZigBee3.0 dual USB wireless socket plug
+- TuYa Smart light switch - 3 gang without neutral wire
 
 ## 0.2.0
 - Support for "stop" command for blinds adapter

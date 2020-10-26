@@ -13,6 +13,7 @@ from adapters.feibit import feibit_adapters
 from adapters.generic.motion_sensor import MotionSensorAdapter
 from adapters.generic.motion_temp_sensor import MotionAndTemperatureSensorAdapter
 from adapters.generic.on_off_kwh import OnOffKwhAdapter
+from adapters.generic.plug import PlugAdapter
 from adapters.generic.smoke_sensor import SmokeSensorAdapter
 from adapters.generic.temperature_sensor import TemperatureSensorAdapter
 from adapters.generic.temp_hum_sensor import TemperatureHumiditySensorAdapter
@@ -32,7 +33,6 @@ from adapters.lumi import lumi_adapters
 from adapters.meazon.dinrail import DinrailAdapter
 from adapters.namron import namron_adapters
 from adapters.neo import neo_adapters
-from adapters.netvox.Z809A import NetvoxZ809A
 from adapters.osram import osram_adapters
 from adapters.oujiabao.CR701_YZ import CR701_YZ
 from adapters.siterwell.GS361AH04 import GS361AH04
@@ -49,6 +49,7 @@ from adapters.tuyatec import tuyatec_adapters
 from adapters.diy.ptvo_switch import PtvoSwitch
 from adapters.diy.zigup import ZigupAdapter
 from adapters.zemismart import zemismart_adapters
+from adapters.diy.diyruzrt import DIYRuZ_RT
 
 adapter_by_model = dict({
     # Alecto Smart Home
@@ -78,6 +79,7 @@ adapter_by_model = dict({
     'DNCKATSW001': OnOffSwitchAdapter,  # Custom devices (DiY) DNCKAT single key wired wall light switch
     'ZigUP': ZigupAdapter,              # Custom devices (DiY) ZigUP
     'DIYRuZ_magnet': ContactAdapter,    # DIYRuZ DIYRuZ_magnet
+    'DIYRuZ_RT': DIYRuZ_RT,             # DIYRuZ_RT SonoffBasic ZBR2+DS18b20
     # Dresden Elektronik
     'Mega23M12': RGBWAdapter,           # Dresden Elektronik ZigBee Light Link wireless electronic ballast
     'XVV-Mega23M12': DimmableCtBulbAdapter, # Dresden Elektronik ZigBee Light Link wireless electronic ballast color temperature
@@ -119,8 +121,11 @@ adapter_by_model = dict({
     'TI0001': TI0001,                   # Livolo Switch TI0001
     # Lonhonso
     'X702': TS0002,                     # Lonhonso 2 gang switch
+    'X711A': OnOffSwitchAdapter,        # Lonsonho 1 gang switch
     # Meazon
     'MEAZON_DINRAIL': DinrailAdapter,   # Meazon DinRail 1-phase meter
+    # Moes
+    'ZK-EU-2U': OnOffSwitchAdapter,     # Moes ZigBee3.0 dual USB wireless socket plug
     # Müller Licht
     '404000/404005/404012': RGBWAdapter,            # Müller Licht Tint LED bulb GU10/E14/E27 350/470/806 lumen, dimmable, color, opal white
     '404006/404008/404004': DimmableCtBulbAdapter,  # Müller Licht Tint LED bulb GU10/E14/E27 350/470/806 lumen, dimmable, opal white
@@ -128,7 +133,7 @@ adapter_by_model = dict({
     # Nanoleaf
     'NL08-0800': DimmableBulbAdapter,   # Nanoleaf Ivy smart bulb
     # Netvox
-    'Z809A': NetvoxZ809A,               # Netvox Power socket with power consumption monitoring
+    'Z809A': PlugAdapter,               # Netvox Power socket with power consumption monitoring
     # NET2GRID
     'N2G-SP': OnOffKwhAdapter,          # NET2GRID N2G-SP
     # Nue
