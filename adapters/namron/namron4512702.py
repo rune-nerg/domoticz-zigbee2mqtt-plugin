@@ -11,7 +11,7 @@ class Namron4512702(AdapterWithBattery):
     def convert_message(self, message):
         message = super().convert_message(message)
         if 'action' in message.raw:
-            actions = message.raw['action'].Split('_')
+            actions = message.raw['action'].split('_')
             if len(actions) > 0:
                 if (actions[0] == 'on' or actions[0] == 'off'):
                     message.raw['value'] = actions[0]
