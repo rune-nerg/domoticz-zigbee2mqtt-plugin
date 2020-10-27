@@ -4,7 +4,7 @@ from devices.switch.dimmer_switch import DimmerSwitch
 class Namron4512702(AdapterWithBattery):
     def __init__(self, devices):
         super().__init__(devices)
-        myValue = 0
+        self.myValue = 0
         self.dimmer = DimmerSwitch(devices, 'dimmer', 'value')
         self.devices.append(self.dimmer)
         
@@ -15,22 +15,22 @@ class Namron4512702(AdapterWithBattery):
             device = self.dimmer
             if len(actions) > 0:
                 if (actions[0] == 'on'):
-                    message.raw['value'] = myValue
+                    message.raw['value'] = self.myValue
                 elif (actions[0] == 'off'):
                     message.raw['value'] = 0
                 elif actions[0] == 'brightness':
                     if len(actions) > 1:
                         if actions[1] == 'move':
                             rate = message.raw['action_rate']
-                            value = myValue * 255 / 100 + (rate if actions[2] == 'up' else -rate)
+                            value = self.myValue * 255 / 100 + (rate if actions[2] == 'up' else -rate)
                             value = value * 100 / 255
-                            myValue = value
+                            self.myValue = value
                             message.raw['value'] = value
                         elif actions[1] == 'step':
                             step = message.raw['action_step_size']
-                            value = myValue *255 / 100 + (step if actions[2] == 'up' else -step)
+                            value = self.myValue *255 / 100 + (step if actions[2] == 'up' else -step)
                             value = value * 100 / 255
-                            myValue = value
+                            self.myValue = value
                             message.raw['value'] = value
                         elif actions[1] == 'stop':
                             pass
