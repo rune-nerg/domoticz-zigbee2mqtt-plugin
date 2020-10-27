@@ -12,24 +12,26 @@ class Namron4512702(AdapterWithBattery):
         message = super().convert_message(message)
         if 'action' in message.raw:
             actions = message.raw['action'].split('_')
+            device = self.dimmer
             if len(actions) > 0:
-                if (actions[0] == 'on' or actions[0] == 'off'):
-                    message.raw['value'] = actions[0]
+                if (actions[0] == 'on'):
+                    message.raw['value'] = device.value
+                elif (actions[0] == 'off'):
+                    message.raw['value'] = 0
                 elif actions[0] == 'brightness':
-                    device = self.dimmer
                     if len(actions) > 1:
                         if actions[1] == 'move':
                             rate = message.raw['action_rate']
-                            value = int(device.sValue)*255/100 + (rate if actions[2] == 'up' else -rate)
+                            value = device.value*255/100 + (rate if actions[2] == 'up' else -rate)
                             value = value * 100 / 255
                             message.raw['value'] = value
                         elif actions[1] == 'step':
                             step = message.raw['action_step_size']
-                            value = int(device.sValue)*255/100 + (step if actions[2] == 'up' else -step)
+                            value = device.value*255/100 + (step if actions[2] == 'up' else -step)
                             value = value * 100 / 255
                             message.raw['value'] = value
                         elif actions[1] == 'stop':
-                            none
+                            pass
         return message
 
 # Possible messages:
