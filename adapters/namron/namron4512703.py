@@ -32,7 +32,7 @@ class Namron4512703(AdapterWithBattery):
                             value = value * 100 / 255
                             message.raw[valuekey] = value
                         elif actions[1] == 'stop':
-                            none
+                            pass
         return message
 
     def handleMqttMessage(self, device_data, message):
@@ -41,7 +41,7 @@ class Namron4512703(AdapterWithBattery):
 
         actions = message.raw['action'].split('_')
         if len(actions) == 0:
-            return;
+            return
 
         converted_message = self.convert_message(message)
 
