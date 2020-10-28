@@ -13,7 +13,6 @@ class Namron4512703(AdapterWithBattery):
         self.sel1.add_level('Up', 'brightness_move_up')
         self.sel1.set_selector_style(SelectorSwitch.SELECTOR_TYPE_BUTTONS)
         self.sel1.disable_value_check_on_update()
-        self.devices.append(self.sel1)
         self.sel2 = SelectorSwitch(devices, 'l2', 'action', ' (Dimmer2)')
         self.sel2.add_level('Off', 'off')
         self.sel2.add_level('On', 'on')
@@ -22,8 +21,7 @@ class Namron4512703(AdapterWithBattery):
         self.sel2.add_level('Up', 'brightness_move_up')
         self.sel2.set_selector_style(SelectorSwitch.SELECTOR_TYPE_BUTTONS)
         self.sel2.disable_value_check_on_update()
-        self.devices.append(self.sel2)
-        self.sel3 = SelectorSwitch(devices, 'sel3', 'action', ' (Dimmer3)')
+        self.sel3 = SelectorSwitch(devices, 'l3', 'action', ' (Dimmer3)')
         self.sel3.add_level('Off', 'off')
         self.sel3.add_level('On', 'on')
         self.sel3.add_level('Down', 'brightness_move_down')
@@ -31,8 +29,7 @@ class Namron4512703(AdapterWithBattery):
         self.sel3.add_level('Up', 'brightness_move_up')
         self.sel3.set_selector_style(SelectorSwitch.SELECTOR_TYPE_BUTTONS)
         self.sel3.disable_value_check_on_update()
-        self.devices.append(self.sel3)
-        self.sel4 = SelectorSwitch(devices, 'sel4', 'action', ' (Dimmer4)')
+        self.sel4 = SelectorSwitch(devices, 'l4', 'action', ' (Dimmer4)')
         self.sel4.add_level('Off', 'off')
         self.sel4.add_level('On', 'on')
         self.sel4.add_level('Down', 'brightness_move_down')
@@ -40,6 +37,10 @@ class Namron4512703(AdapterWithBattery):
         self.sel4.add_level('Up', 'brightness_move_up')
         self.sel4.set_selector_style(SelectorSwitch.SELECTOR_TYPE_BUTTONS)
         self.sel4.disable_value_check_on_update()
+
+        self.devices.append(self.sel1)
+        self.devices.append(self.sel2)
+        self.devices.append(self.sel3)
         self.devices.append(self.sel4)
         
     def convert_message(self, message):
