@@ -46,7 +46,7 @@ class Namron4512703(AdapterWithBattery):
         message = super().convert_message(message)
         if 'action' in message.raw:
             # Remove switch designator
-            message.raw['action'] = message.raw['action'].split('_')[0,-1]
+            message.raw['action'] = message.raw['action'].split('_')[:-1]
         return message
 
     def handleMqttMessage(self, device_data, message):
